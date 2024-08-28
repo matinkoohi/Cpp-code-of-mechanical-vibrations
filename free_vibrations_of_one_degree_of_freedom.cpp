@@ -30,19 +30,19 @@ int main() {
     float zeta, omegan, omegad, f; 
      
     // input date 
-    cout<<"please input Damper coefficient (c): "
+    cout<<"please input Damper coefficient (c): ";
     cin >> c; 
-    cout<<"please input Primary X (x0): "
+    cout<<"please input Primary X (x0): ";
     cin >> x0; 
-    cout<<"please input Spring stiffness factor (k): "
+    cout<<"please input Spring stiffness factor (k): ";
     cin >> k; 
-    cout<<"please input mass (m): "
+    cout<<"please input mass (m): ";
     cin >> m; 
-    cout<<"please input The range of time changes (delta_T): "
+    cout<<"please input The range of time changes (delta_T): ";
     cin >> deltat; 
-    cout<<"please input The first derivative of the function (xd0): "
+    cout<<"please input The first derivative of the function (xd0): ";
     cin >> xd0; 
-    cout<<"please input Number of repetitions (n): "
+    cout<<"please input Number of repetitions (n): ";
     cin >> n; 
      
     // determine variables 
@@ -52,7 +52,7 @@ int main() {
     cout << "Zeta = " << zeta << endl; 
      
     // analysis of motion 
-    if (zeta = 0) { 
+    if (zeta == 0) { 
         float t = deltat; 
         cout<<"Undamped"<<endl; 
         for (int i = 1; i <= n; i++) { 
@@ -60,7 +60,8 @@ int main() {
             cout << "i = " << i <<" t = " << t << " , X(t) = " << f << endl; 
             t += deltat; 
         } 
-    if (zeta < 1 && zeta > 0) { 
+    }
+    else if (zeta < 1 && zeta > 0) { 
         float t = deltat; 
         cout<<"Underdamped"<<endl; 
         for (int i = 1; i <= n; i++) { 
@@ -69,7 +70,7 @@ int main() {
             t += deltat; 
         } 
     } 
-    if (zeta = 1) { 
+    else if (zeta == 1) { 
         float t = deltat; 
         cout<<"Critically Damped"<<endl; 
         for (int i = 1; i <= n; i++) { 
@@ -78,7 +79,7 @@ int main() {
             t += deltat; 
         } 
     } 
-    if (zeta > 1) { 
+    else if (zeta > 1) { 
         float t = deltat; 
         cout<<"Overdamped"<<endl; 
         for (int i = 1; i <= n; i++) { 
@@ -87,9 +88,12 @@ int main() {
             t += deltat; 
         } 
     } 
-    else{ 
-      cout<<"Damping Coefficient can not be negative"; 
+    else if (zeta < 0)
+    {
+      cout<<"Damping Coefficient can not be negative";
+    }
+    else { 
+      cout<<"something went wrong!!"; 
     } 
     return 0; 
-}
 }
