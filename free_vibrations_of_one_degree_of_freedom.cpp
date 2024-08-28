@@ -30,12 +30,19 @@ int main() {
     float zeta, omegan, omegad, f; 
      
     // input date 
+    cout<<"please input Damper coefficient (c): "
     cin >> c; 
+    cout<<"please input Primary X (x0): "
     cin >> x0; 
+    cout<<"please input Spring stiffness factor (k): "
     cin >> k; 
+    cout<<"please input mass (m): "
     cin >> m; 
+    cout<<"please input The range of time changes (delta_T): "
     cin >> deltat; 
+    cout<<"please input The first derivative of the function (xd0): "
     cin >> xd0; 
+    cout<<"please input Number of repetitions (n): "
     cin >> n; 
      
     // determine variables 
