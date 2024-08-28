@@ -74,7 +74,7 @@ int main() {
         float t = deltat; 
         cout<<"Critically Damped"<<endl; 
         for (int i = 1; i <= n; i++) { 
-            f = exp(-omegan*deltat)*(x0+(x0*omegan+xd0)*deltat); 
+            f = exp(-omegan*t)*(x0+(x0*omegan+xd0)*t); 
             cout << "i = " << i << " t = " << t <<" , X(t) = " << f << endl; 
             t += deltat; 
         } 
@@ -83,7 +83,7 @@ int main() {
         float t = deltat; 
         cout<<"Overdamped"<<endl; 
         for (int i = 1; i <= n; i++) { 
-            f = exp(-zeta*omegan*deltat)*(x0*cosh(omegan*sqrt(pow(zeta,2)-1)*deltat)+(((xd0*x0*zeta*omegan)/omegan/sqrt(zeta-1))*sinh(omegan*sqrt(pow(zeta,2)-1)*deltat))) ; 
+            f = exp(-zeta*omegan*t)*(x0*cosh(omegan*sqrt(pow(zeta,2)-1)*t)+(((xd0*x0*zeta*omegan)/omegan/sqrt(zeta-1))*sinh(omegan*sqrt(pow(zeta,2)-1)*t))) ; 
             cout << "i = " << i <<" t = " << t <<" , X(t) = " << f << endl; 
             t += deltat; 
         } 
